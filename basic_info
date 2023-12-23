@@ -17,3 +17,14 @@ I hope this information was helpful for you. If you have any more questions abou
 https://research.cs.wisc.edu/graphics/Gallery/NPRQuake/whatIsIt.html
 https://google.github.io/styleguide/
 https://renderdoc.org/
+
+Shader
+A shader is a piece of code that is run when shading a mesh. It can be anything, including a texture, but the term is often used to refer to a shader that runs a BSDF or group of BSDFs, or something of that nature, such as emission. Blender's UI follows this convention, the BSDF nodes are in a submenu called "shaders". (but in some sense, all the nodes are shaders).
+
+Texture
+Textures add detail at the shader level. They do this by either loading an image file, or creating a procedural pattern of some kind, such as noise, bricks, or gradients. There are also a number of things that aren't quite textures that fall under the vague heading of "utility shaders". These perform some conversion function (examples in Cycles would be the Math node, or the Blackbody node), or provide access to variables (such as the Geometry or Texture Coordinates nodes)
+
+Material
+A material is a collection of shader(s) that you apply to a model to define how it is shaded. A material might consist of a single BSDF, or it might contain a vast array of textures, utilities, and multiple BSDFs. You can think of it as a container or wrapper
+
+Finally, remember that many people are not always consistent about using these terms according to the definitions here. "material" and "shader" especially are often used interchangeably.
